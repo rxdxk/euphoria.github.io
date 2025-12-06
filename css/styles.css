@@ -22,6 +22,7 @@ body {
     background-color: var(--color-black); /* Основной фон черный */
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 95px; /* 60px navbar + 35px marquee */
 }
 
 h1, h2, h3, h4, h5, h6 {
