@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EUPHORIA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="logo">EUPHORIA</div>
+        <nav>
+            <a href="{{ url_for('collections') }}">Collections</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+        <div class="nav-icons">
+            <a href="#" class="icon-link"><img src="{{ url_for('static', filename='cart-icon.svg') }}" alt="Cart"></a>
+            <a href="#" class="icon-link"><img src="{{ url_for('static', filename='user-icon.svg') }}" alt="Account"></a>
+        </div>
+    </header>
+
+<!-- Бегущая строка -->
+<div class="marquee-container">
+    <div class="marquee">
+        <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+        <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<section id="about-hero" class="page-hero hero-section">
+    <div class="hero-bg-slider"></div> <!-- сюда JS может подключать слайды -->
+    <div class="hero-content">
+        <h1>Our Story</h1>
+        <p>Our mission is to redefine luxury jewelry by combining traditional craftsmanship with modern innovation. Every EUPHORIA piece is custom-made from real gold and includes an NFC chip that reveals its full journey — from the materials used to the hands that crafted it. The jewelry also carries a personal digital message or video, making every piece not just an accessory, but a timeless memory.</p>
+    </div>
+</section>
+<!-- OUR MISSION + ROADMAP -->
+<section id="our-mission" class="text-section">
+    <div class="text-block">
+        <h2>Choose EUPHORIA</h2>
+        <ul class="no-bullets">
+            <li>100% real gold, custom-made pieces</li>
+            <li>Built-in NFC chip providing:</li>
+            <li>Authenticity check</li>
+            <li>Full story of material sourcing & craftsmanship</li>
+            <li>Personal message or video attached to the jewelry</li>
+            <li>Limited-edition collections released every 3 months</li>
+        </ul>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-bottom">
+        &copy; 2025 EUPHORIA. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='js/hero-slider.js') }}"></script>
+```
+
+</body>
+</html>

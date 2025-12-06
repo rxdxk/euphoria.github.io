@@ -1,0 +1,635 @@
+/* --- Глобальные переменные --- */
+:root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gold: #C5A35A; /* Элегантный золотой акцент */
+    --color-dark-grey: #1a1a1a; /* Темный фон для контраста */
+    --color-medium-grey: #666; 
+    --font-heading: 'Playfair Display', serif; /* Для крупной, выразительной типографики */
+    --font-body: 'Montserrat', sans-serif; /* Для чистой читаемости */
+}
+
+/* --- Сброс и Базовые стили --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-white); /* Основной текст белый */
+    background-color: var(--color-black); /* Основной фон черный */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin-bottom: 0.5em;
+    color: var(--color-white); /* Заголовки белые */
+}
+h1 { font-size: 5em; font-weight: 700; letter-spacing: 5px; } /* Очень крупный заголовок */
+h2 { font-size: 3em; font-weight: 400; letter-spacing: 2px; }
+h3 { font-size: 1.8em; font-weight: 400; }
+
+a {
+    text-decoration: none;
+    color: var(--color-gold);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-white);
+}
+
+/* --- Навигация (ЭЛЕГАНТНЫЙ ТЕМНЫЙ СТИЛЬ) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 3%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-black);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    gap: 30px;
+}
+
+.logo {
+    color: var(--color-gold);
+    font-size: 1.6em;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.navbar nav {
+    flex-grow: 1; 
+    text-align: center;
+    
+    /* КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ: Активируем Flexbox на контейнере ссылок */
+    display: flex; 
+    justify-content: center; /* Центрируем всю группу ссылок */
+    gap: 150px; /* <--- ДОБАВЛЯЕМ ГОРИЗОНТАЛЬНОЕ РАССТОЯНИЕ (например, 30px) */
+    align-items: center; /* Убеждаемся, что они выровнены по вертикали */
+}
+
+.navbar nav a {
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+    /* УДАЛИТЕ ЛЮБОЙ margin-left или margin-right, чтобы не конфликтовать с gap */
+    margin: 0; 
+}
+
+.nav-icons {
+    /* Разносим вправо и центрируем по вертикали */
+    justify-content: flex-end; 
+}
+
+/* --- Ссылки-контейнеры (Убеждаемся, что они не имеют лишних отступов) --- */
+.nav-icons .icon-link {
+    line-height: 0; /* Убирает лишние вертикальные отступы вокруг иконки */
+}
+
+/* --- Сами изображения (Цвет и Размер) --- */
+.nav-icons img {
+    /* Удаляем все нерабочие Flexbox-свойства */
+    width: 24px; 
+    height: 24px;
+    
+    /* Базовый цвет иконки */
+    filter: invert(100%); /* Белый цвет */
+    transition: filter 0.3s ease;
+}
+
+/* --- Эффект при наведении (Gold Color) --- */
+.nav-icons .icon-link:hover img {
+    /* УДАЛЕНЫ НЕРАБОЧИЕ СВОЙСТВА (margin-left, gap) */
+    
+    /* Золотой цвет при наведении */
+    filter: invert(60%) sepia(15%) saturate(1000%) hue-rotate(0deg) brightness(85%) contrast(85%); 
+}
+
+/* --- Кнопки CTA (Золотая рамка, минимализм) --- */
+.cta-button {
+    background-color: transparent;
+    border: 1px solid var(--color-gold); 
+    color: var(--color-gold); 
+    padding: 10px 20px;
+}
+
+.cta-button:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border-color: var(--color-gold);
+}
+
+
+/* --- Hero Section (ТЕМНЫЙ СТИЛЬ, СУПЕР-ПРЕМИУМ МАКЕТ) --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.hero-bg-slider {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-slider .slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-bg-slider .slide.active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  text-align: center;
+  color: var(--color-gold); /* Золотой цвет для текста */
+}
+
+.hero-content h2 {
+  font-size: 42px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e7e7e7;
+}
+
+/* Меняем фото каждые 6 секунд */
+@keyframes sliderAnimation {
+    0%   { background-image: url('D:/python/nastya_project/static/blue waves.png'); }
+    33%  { background-image: url('D:/python/nastya_project/static/steel1.png'); }
+    66%  { background-image: url('../static/steel2.jpg'); }
+    100% { background-image: url('../static/blue waves.png'); }
+}
+
+/* --- Brand Story Snippet (ТЕМНЫЙ СТИЛЬ, как на образце) --- */
+#brand-story-snippet {
+    background-color: var(--color-dark-grey); /* Темный, но не черный */
+    text-align: center;
+    padding: 100px 5%;
+    color: var(--color-white);
+}
+#brand-story-snippet h2 {
+    color: var(--color-gold);
+    font-size: 2.2em; 
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+#brand-story-snippet p {
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1em;
+}
+/* --- Featured Products (СВЕТЛАЯ СЕКЦИЯ, СЕТКА) --- */
+#featured-products {
+    background-color: var(--color-white);
+    padding: 80px 5%;
+    text-align: center;
+    color: var(--color-black);
+    margin-top: 80px; /* фикс чтобы стрелки не наезжали на hero */
+    position: relative;
+    z-index: 5;
+}
+
+#featured-products h2 {
+    color: var(--color-black);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+/* --- Карусельные карточки --- */
+.featured-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background-color: var(--color-white);
+    padding: 0;
+    width: 30%;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    color: var(--color-black);
+    font-size: 1.2em;
+}
+
+.product-card .price {
+    color: var(--color-black);
+}
+
+.product-card .view-details {
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+/* --- Стрелки Swiper: расположены по центру секции --- */
+.swiper-button-next,
+.swiper-button-prev {
+    top: 50% !important;
+    transform: translateY(-50%);
+    color: var(--color-black);
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+/* Наведение */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    opacity: 1;
+}
+
+/* Стиль символов стрелок */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--color-black);
+}
+
+/* --- Footer (ТЕМНЫЙ СТИЛЬ) --- */
+.site-footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 60px 5%;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h3 {
+    color: var(--color-gold);
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+.footer-section ul li a {
+    color: var(--color-white);
+}
+.footer-section ul li a:hover {
+    color: var(--color-gold);
+}
+
+
+/* --- Адаптивность (Базовые медиа-запросы) --- */
+@media (max-width: 992px) {
+    .navbar nav { display: none; }
+    .featured-grid { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+    #hero { flex-direction: column; height: auto; padding-top: 50px; }
+    .hero-content { padding-left: 0; text-align: center; order: 2; }
+    .hero-image { flex: 0 0 100%; height: 50vh; order: 1; margin-bottom: 30px; }
+    .hero-content h1 { font-size: 3em; letter-spacing: 3px; }
+
+    .featured-grid { flex-direction: column; }
+    .product-card { width: 100%; }
+}
+/* Full-width modern contact footer */
+.contact-full {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background: #111;
+    color: white;
+}
+
+.contact-column {
+    width: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.contact-column h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #f9cc60;
+    border-bottom: 2px solid #f9cc60;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contact-column p {
+    margin: 6px 0;
+    opacity: 0.9;
+    font-size: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background: #0c0c0c;
+    color: #aaa;
+    border-top: 1px solid #333;
+    font-size: 14px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .contact-full {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-column {
+        width: 100%;
+    }
+}
+
+/* --- Контейнеры секций --- */
+.content-section {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 40px;
+padding: 60px 5%;
+flex-wrap: wrap;
+}
+
+.content-section.reversed {
+flex-direction: row-reverse;
+}
+
+/* --- Контент --- */
+.content-wrapper {
+flex: 1 1 400px; /* растягивается, но минимальная ширина 400px */
+max-width: 600px;
+}
+
+/* --- Изображения --- */
+.section-image {
+flex: 1 1 400px;
+max-width: 500px; /* ограничение по ширине */
+width: 100%;
+height: 350px; /* фиксированная высота */
+object-fit: cover; /* сохраняем пропорции и обрезаем лишнее */
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- Списки с золотым цветом --- */
+.gold-list li {
+color: #C5A35A;
+margin-bottom: 10px;
+font-size: 1em;
+}
+
+.timeline-list li {
+margin-bottom: 15px;
+line-height: 1.6;
+}
+
+/* --- Hero контент --- */
+.hero-section {
+position: relative;
+width: 100%;
+min-height: 75vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 60px 20px;
+overflow: hidden;
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 600px;
+text-align: center;
+color: #C5A35A; /* золотой текст */
+}
+
+.hero-content h1 {
+font-size: 3em;
+margin-bottom: 20px;
+}
+
+.hero-content p {
+font-size: 1.2em;
+line-height: 1.5;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 992px) {
+.content-section {
+flex-direction: column;
+align-items: center;
+}
+.section-image {
+height: 300px;
+max-width: 100%;
+}
+}
+
+.centered-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+}
+
+.centered-section .image-block {
+margin-top: 20px;
+}
+
+.centered-section .image-block h3 {
+margin-bottom: 10px;
+color: #C5A35A; /* золотой */
+font-size: 1.2em;
+}
+
+.section-image {
+width: 100%;
+max-width: 500px;
+height: 350px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+.section-image {
+height: 250px;
+max-width: 100%;
+}
+}
+
+/* Текстовые блоки под ряд друг над другом */
+.text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 60px 5%;
+}
+
+/* Фото внизу рядом друг с другом */
+.photo-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 5%;
+    flex-wrap: wrap;
+}
+
+.photo-block {
+    text-align: center;
+}
+
+.photo-block h3 {
+    margin-bottom: 10px;
+    color: #C5A35A;
+    font-size: 1.2em;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .section-image {
+        max-width: 100%;
+        height: 250px;
+    }
+}
+
+/* Убираем стандартные маркеры списка и делаем строки подряд */
+.no-bullets {
+    list-style: none;  /* убираем точки */
+    padding: 0;
+    margin: 0;
+}
+
+.no-bullets li {
+    margin-bottom: 10px; /* отступ между строками */
+    font-size: 1em;
+    color: #C5A35A; /* если хочешь золотой */
+}
+
+/* Убираем верхний и нижний отступы для hero и текста */
+.page-hero {
+    padding-bottom: 0; /* снизу нет паддинга */
+    margin-bottom: 0;  /* нет внешнего отступа */
+}
+
+.page-hero h1 {
+    margin-bottom: 10px; /* можно уменьшить для компактности */
+}
+
+.text-section {
+    padding-top: 0; /* сверху нет паддинга */
+    margin-top: 0;  /* нет внешнего отступа */
+}
+/* --- Навигация фиксирована сверху --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Бегущая строка под навигацией --- */
+.marquee-container {
+    position: fixed;
+    top: 70px; /* высота шапки навигации */
+    left: 0;
+    width: 100%;
+    background-color: #C5A35A; /* золотой фон */
+    overflow: hidden;
+    z-index: 999;
+}
+
+.marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite; /* увеличена длительность для плавности */
+}
+
+.marquee span {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    margin-right: 0; /* убрали промежуток между спанами */
+}
+
+/* Анимация движения текста */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Смещаем основной контент ниже шапки + бегущей строки */
+body {
+    padding-top: 95px; /* 60px навигация + 35px бегущая строка */
+}
