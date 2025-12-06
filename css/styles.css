@@ -641,3 +641,36 @@ max-width: 100%;
         color: var(--color-white);
     }
 }
+
+/* Бегущая строка */
+.marquee-container {
+    position: fixed;
+    top: 60px; /* сразу под navbar */
+    left: 0;
+    width: 100%;
+    height: 50px; /* задаём фиксированную высоту */
+    background-color: #C5A35A;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+    align-items: center; /* выравниваем текст по центру */
+    height: 100%;
+}
+
+.marquee span {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 50px; /* по высоте контейнера */
+    margin-right: 50px; /* небольшой промежуток между повторениями */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
