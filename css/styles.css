@@ -604,7 +604,7 @@ max-width: 100%;
 
 .marquee-container {
     position: fixed;
-    top: 60px; /* высота navbar */
+    top: 70px; /* высота navbar */
     left: 0;
     width: 100%;
     background-color: #C5A35A;
