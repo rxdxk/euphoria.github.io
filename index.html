@@ -24,102 +24,102 @@
         });
     </script>
     <body>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="nav-menu">
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+
+    <!-- Бегущая строка -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+            <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
         </div>
+    </div>
 
-        <nav id="nav-menu">
-            <a href="collections.html">Collections</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-
-        <!-- Бегущая строка -->
-        <div class="marquee-container">
-            <div class="marquee">
-                <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
-                <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+    <main>
+        <section class="hero-section">
+            <div class="hero-bg-slider">
+                <div class="slide" style="background-image: url('images/blue-waves.png');"></div>
+                <div class="slide" style="background-image: url('images/steel1.png');"></div>
+                <div class="slide" style="background-image: url('images/steel2.jpg');"></div>
             </div>
-        </div>
 
-        <main>
-            <section class="hero-section">
-                <div class="hero-bg-slider">
-                    <div class="slide" style="background-image: url('images/blue-waves.png');"></div>
-                    <div class="slide" style="background-image: url('images/steel1.png');"></div>
-                    <div class="slide" style="background-image: url('images/steel2.jpg');"></div>
-                </div>
+            <div class="hero-content">
+                <h2>Your story in gold.</h2>
+                <a href="#" class="hero-btn">Order Now</a>
+            </div>
+        </section>
 
-                <div class="hero-content">
-                    <h2>Your story in gold.</h2>
-                    <a href="#" class="hero-btn">Order Now</a>
-                </div>
-            </section>
-
-            <section id="featured-products">
-                <h2>INITIAL SPARK Collection</h2>
-                <div class="product-carousel swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide product-card">
-                            <img src="images/steel1.png" alt="Product 1">
-                            <h3>White gold + diamonds Ring</h3>
-                            <p>$750</p>
-                            <a href="#" class="view-details">View Details</a>
-                        </div>
-                        <div class="swiper-slide product-card">
-                            <img src="images/blue-waves.png" alt="Product 2">
-                            <h3>White gold + diamonds Necklace</h3>
-                            <p>$850</p>
-                            <a href="#" class="view-details">View Details</a>
-                        </div>
-                        <div class="swiper-slide product-card">
-                            <img src="images/steel2.jpg" alt="Product 3">
-                            <h3>White gold + diamonds bracelet</h3>
-                            <p>$990</p>
-                            <a href="#" class="view-details">View Details</a>
-                        </div>
+        <section id="featured-products">
+            <h2>INITIAL SPARK Collection</h2>
+            <div class="product-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide product-card">
+                        <img src="images/steel1.png" alt="Product 1">
+                        <h3>White gold + diamonds Ring</h3>
+                        <p>$750</p>
+                        <a href="#" class="view-details">View Details</a>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-slide product-card">
+                        <img src="images/blue-waves.png" alt="Product 2">
+                        <h3>White gold + diamonds Necklace</h3>
+                        <p>$850</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
+                    <div class="swiper-slide product-card">
+                        <img src="images/steel2.jpg" alt="Product 3">
+                        <h3>White gold + diamonds bracelet</h3>
+                        <p>$990</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
                 </div>
-            </section>
-
-            <section id="brand-story-snippet">
-                <div class="content-wrapper">
-                    <h2>Our Legacy of Brilliance</h2>
-                    <p>EUPHORIA is synonymous with unparalleled craftsmanship and timeless elegance. Each piece tells a story of passion, precision, and dedication to beauty.</p>
-                    <a href="about.html" class="cta-button secondary">Learn More About Us</a>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- FOOTER -->
-        <footer class="site-footer">
-            <div class="footer-bottom">
-                &copy; 2025 EUPHORIA. All Rights Reserved.
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-        </footer>
+        </section>
 
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script src="js/hero-slider.js"></script>
-        <script>
-            // Initialize Swiper Carousel
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                loop: true,
-                pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-                breakpoints: {
-                    768: { slidesPerView: 2, spaceBetween: 20 },
-                    480: { slidesPerView: 1, spaceBetween: 10 }
-                }
-            });
-        </script>
-    </body>
+        <section id="brand-story-snippet">
+            <div class="content-wrapper">
+                <h2>Our Legacy of Brilliance</h2>
+                <p>EUPHORIA is synonymous with unparalleled craftsmanship and timeless elegance. Each piece tells a story of passion, precision, and dedication to beauty.</p>
+                <a href="about.html" class="cta-button secondary">Learn More About Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            &copy; 2025 EUPHORIA. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/hero-slider.js"></script>
+    <script>
+        // Initialize Swiper Carousel
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                480: { slidesPerView: 1, spaceBetween: 10 }
+            }
+        });
+    </script>
+</body>
 </html>
