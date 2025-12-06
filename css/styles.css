@@ -588,62 +588,26 @@ max-width: 100%;
     margin-top: 0;  /* нет внешнего отступа */
 }
 /* --- Навигация фиксирована сверху --- */
+/* Navbar и гамбургер */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1001; /* увеличено */
-    background-color: #000000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1001;
+    background-color: var(--color-black);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 15px 3%;
     gap: 30px;
 }
 
-.marquee-container {
-    position: fixed;
-    top: 70px; /* высота navbar */
-    left: 0;
-    width: 100%;
-    background-color: #C5A35A;
-    overflow: hidden;
-    z-index: 1000; /* ниже navbar */
-}
-
-.marquee {
-    display: flex;
-    width: max-content;
-    animation: marquee 30s linear infinite; /* увеличена длительность для плавности */
-}
-
-.marquee span {
-    color: #000;
-    font-weight: bold;
-    font-size: 1.2em;
-    letter-spacing: 2px;
-    margin-right: 0; /* убрали промежуток между спанами */
-}
-
-/* Анимация движения текста */
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Смещаем основной контент ниже шапки + бегущей строки */
-body {
-    padding-top: 95px; /* 60px навигация + 35px бегущая строка */
-}
-
-/* --- Гамбургер --- */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    margin-left: auto;
 }
 
 .hamburger span {
@@ -654,37 +618,25 @@ body {
     border-radius: 2px;
 }
 
-/* Мобильное меню */
-#nav-menu {
-    display: flex;
-    gap: 30px;
-}
-
-#nav-menu.show {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* под навбаром */
-    left: 0;
-    width: 100%;
-    background-color: var(--color-black);
-    padding: 20px 0;
-    text-align: center;
-    z-index: 999;
-}
-
-#nav-menu.show a {
-    padding: 10px 0;
-    display: block;
-    color: var(--color-white);
-}
-
-/* Скрываем навигацию на мобильных, показываем гамбургер */
+/* Скрываем меню на мобильных */
 @media (max-width: 768px) {
-    #nav-menu {
-        display: none;
-    }
-    .hamburger {
+    #nav-menu { display: none; }
+    .hamburger { display: flex; }
+    #nav-menu.show {
         display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* под navbar */
+        left: 0;
+        width: 100%;
+        background-color: var(--color-black);
+        padding: 20px 0;
+        text-align: center;
+        z-index: 1000;
+    }
+    #nav-menu.show a {
+        padding: 10px 0;
+        display: block;
+        color: var(--color-white);
     }
 }
