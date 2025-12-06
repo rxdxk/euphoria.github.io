@@ -8,17 +8,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
-<body>
-    <header class="navbar">
-        <div class="logo">
-            <a href="/" style="color: var(--color-gold); text-decoration: none;">EUPHORIA</a>
-        </div>
-        <nav>
-            <a href="collections.html">Collections</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+    </script>
+    <body>
+        <header class="navbar">
+            <div class="logo">
+                <a href="index.html">EUPHORIA</a>
+            </div>
+
+            <!-- Гамбургер для мобильных -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav id="nav-menu">
+                <a href="collections.html">Collections</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
 
     <!-- Бегущая строка -->
     <div class="marquee-container">
