@@ -3,56 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections - Brand Name</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>About Us - EUPHORIA</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- HEADER -->
     <header class="navbar">
-        <div class="logo">BRAND NAME</div>
+        <div class="logo">EUPHORIA</div>
         <nav>
-            <a href="collections">Collections</a>
-            <a href="about">About Us</a>
-            <a href="contact">Contact</a>
+            <a href="collections.html">Collections</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </nav>
         <div class="nav-icons">
-            <a href="#" class="icon-link"><img src="path/to/cart-icon.svg" alt="Cart"></a>
-            <a href="#" class="icon-link"><img src="path/to/user-icon.svg" alt="Account"></a>
+            <a href="#" class="icon-link"><img src="images/cart-icon.svg" alt="Cart"></a>
+            <a href="#" class="icon-link"><img src="images/user-icon.svg" alt="Account"></a>
         </div>
     </header>
 
-    <main>
-        <section id="collections-hero" class="page-hero">
-            <h1>Our Collections</h1>
-            <p>Explore our curated selection of exquisite jewelry.</p>
-        </section>
+    <!-- Бегущая строка -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+            <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+        </div>
+    </div>
 
-        <section id="collection-grid" class="content-section">
-            <div class="grid-container">
-                <div class="collection-card">
-                    <img src="path/to/collection1.jpg" alt="The Purity Collection">
-                    <h3>The Purity Collection</h3>
-                    <p>Clean lines and brilliant diamonds celebrate understated elegance.</p>
-                    <a href="#" class="cta-button secondary">View Collection</a>
-                </div>
-                <div class="collection-card">
-                    <img src="path/to/collection2.jpg" alt="The Heritage Collection">
-                    <h3>The Heritage Collection</h3>
-                    <p>Inspired by timeless classics, reimagined for the modern era.</p>
-                    <a href="#" class="cta-button secondary">View Collection</a>
-                </div>
-                <div class="collection-card">
-                    <img src="path/to/collection3.jpg" alt="The Lumina Collection">
-                    <h3>The Lumina Collection</h3>
-                    <p>Radiant gemstones and intricate designs capture the light.</p>
-                    <a href="#" class="cta-button secondary">View Collection</a>
-                </div>
-                </div>
-        </section>
+    <!-- HERO SECTION -->
+    <section id="about-hero" class="page-hero hero-section">
+        <div class="hero-bg-slider"></div> <!-- JS может подключать слайды -->
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p>Our mission is to redefine luxury jewelry by combining traditional craftsmanship with modern innovation. Every EUPHORIA piece is custom-made from real gold and includes an NFC chip that reveals its full journey — from the materials used to the hands that crafted it. The jewelry also carries a personal digital message or video, making every piece not just an accessory, but a timeless memory.</p>
+        </div>
+    </section>
 
-    </main>
+    <!-- OUR MISSION + ROADMAP -->
+    <section id="our-mission" class="text-section">
+        <div class="text-block">
+            <h2>Choose EUPHORIA</h2>
+            <ul class="no-bullets">
+                <li>100% real gold, custom-made pieces</li>
+                <li>Built-in NFC chip providing:</li>
+                <li>Authenticity check</li>
+                <li>Full story of material sourcing & craftsmanship</li>
+                <li>Personal message or video attached to the jewelry</li>
+                <li>Limited-edition collections released every 3 months</li>
+            </ul>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
-        </footer>
+        <div class="footer-bottom">
+            &copy; 2025 EUPHORIA. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/hero-slider.js"></script>
+
 </body>
 </html>

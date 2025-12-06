@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUPHORIA - Exquisite Jewelry</title>
-    <link rel="stylesheet" href="css/styles.css') }}">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
@@ -12,30 +12,30 @@
     <header class="navbar">
         <div class="logo">EUPHORIA</div>
         <nav>
-            <a href="{{ url_for('collections') }}">Collections</a>
-            <a href="{{ url_for('about') }}">About Us</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="collections.html">Collections</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </nav>
         <div class="nav-icons">
-            <a href="#" class="icon-link"><img src="{{ url_for('static', filename='cart-icon.svg') }}" alt="Cart"></a>
-            <a href="#" class="icon-link"><img src="{{ url_for('static', filename='user-icon.svg') }}" alt="Account"></a>
+            <a href="#" class="icon-link"><img src="images/cart-icon.svg" alt="Cart"></a>
+            <a href="#" class="icon-link"><img src="images/user-icon.svg" alt="Account"></a>
         </div>
     </header>
 
-<!-- Бегущая строка -->
-<div class="marquee-container">
-    <div class="marquee">
-        <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
-        <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+    <!-- Бегущая строка -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+            <span>EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp; EUPHORIA &nbsp;</span>
+        </div>
     </div>
-</div>
 
     <main>
         <section class="hero-section">
             <div class="hero-bg-slider">
-                <div class="slide" style="background-image: url('static/blue-waves.png');"></div>
-                <div class="slide" style="background-image: url('static/steel1.png');"></div>
-                <div class="slide" style="background-image: url('static/steel2.jpg');"></div>
+                <div class="slide" style="background-image: url('images/blue-waves.png');"></div>
+                <div class="slide" style="background-image: url('images/steel1.png');"></div>
+                <div class="slide" style="background-image: url('images/steel2.jpg');"></div>
             </div>
 
             <div class="hero-content">
@@ -44,31 +44,29 @@
             </div>
         </section>
 
-        <script src="{{ url_for('static', filename='js/hero-slider.js') }}"></script>
-
         <section id="featured-products">
             <h2>Our Featured Creations</h2>
             <div class="product-carousel swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide product-card">
-                        <img src="{{ url_for('static', filename='product1.jpg') }}" alt="Product 1">
+                        <img src="images/product1.jpg" alt="Product 1">
                         <h3>Diamond Serenity Ring</h3>
                         <p>$1,200</p>
                         <a href="#" class="view-details">View Details</a>
                     </div>
                     <div class="swiper-slide product-card">
-                        <img src="{{ url_for('static', filename='product2.jpg') }}" alt="Product 2">
+                        <img src="images/product2.jpg" alt="Product 2">
                         <h3>Golden Embrace Necklace</h3>
                         <p>$850</p>
                         <a href="#" class="view-details">View Details</a>
                     </div>
                     <div class="swiper-slide product-card">
-                        <img src="{{ url_for('static', filename='product3.jpg') }}" alt="Product 3">
+                        <img src="images/product3.jpg" alt="Product 3">
                         <h3>Emerald Dewdrop Earrings</h3>
                         <p>$990</p>
                         <a href="#" class="view-details">View Details</a>
                     </div>
-                    </div>
+                </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -79,46 +77,34 @@
             <div class="content-wrapper">
                 <h2>Our Legacy of Brilliance</h2>
                 <p>For decades, EUPHORIA has been synonymous with unparalleled craftsmanship and timeless elegance. Each piece tells a story of passion, precision, and dedication to beauty.</p>
-                <a href="about" class="cta-button secondary">Learn More About Us</a>
+                <a href="about.html" class="cta-button secondary">Learn More About Us</a>
             </div>
         </section>
 
     </main>
+
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-bottom">
             &copy; 2025 EUPHORIA. All Rights Reserved.
         </div>
     </footer>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/hero-slider.js"></script>
     <script>
         // Initialize Swiper Carousel
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 3,
             spaceBetween: 30,
             loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
             breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                480: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                }
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                480: { slidesPerView: 1, spaceBetween: 10 }
             }
         });
-
-        // Basic Parallax for Hero (add to styles.css background-attachment: fixed for simple effect)
-        // For more advanced parallax, you'd need the JS from before or a library
     </script>
 </body>
 </html>

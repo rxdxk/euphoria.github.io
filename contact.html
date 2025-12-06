@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Brand Name</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar">
         <div class="logo">BRAND NAME</div>
         <nav>
-            <a href="collections">Collections</a>
-            <a href="about">About Us</a>
-            <a href="contact">Contact</a>
+            <a href="collections.html">Collections</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </nav>
         <div class="nav-icons">
-            <a href="#" class="icon-link"><img src="path/to/cart-icon.svg" alt="Cart"></a>
-            <a href="#" class="icon-link"><img src="path/to/user-icon.svg" alt="Account"></a>
+            <a href="#" class="icon-link"><img src="images/cart-icon.svg" alt="Cart"></a>
+            <a href="#" class="icon-link"><img src="images/user-icon.svg" alt="Account"></a>
         </div>
     </header>
 
@@ -28,13 +28,6 @@
         </section>
 
         <section id="contact-info" class="content-section">
-            
-            {% if request.args.get('success') %}
-                <div class="success-message">
-                    Thank you! Your message has been sent successfully.
-                </div>
-            {% endif %}
-
             <div class="content-wrapper contact-details">
                 <h2>Reach Out to Us</h2>
                 <p>Whether you have a question about our collections, need assistance with an order, or wish to discuss a custom design, our team is here to help.</p>
@@ -57,7 +50,9 @@
 
             <div class="contact-form">
                 <h2>Send Us a Message</h2>
-                <form action="{{ url_for('contact') }}" method="POST"> <div class="form-group">
+                <!-- Для Netlify Forms нужно добавить атрибуты data-netlify -->
+                <form name="contact" method="POST" data-netlify="true">
+                    <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
                     </div>
@@ -80,6 +75,9 @@
     </main>
 
     <footer class="site-footer">
-        </footer>
+        <div class="footer-bottom">
+            &copy; 2025 BRAND NAME. All Rights Reserved.
+        </div>
+    </footer>
 </body>
 </html>
