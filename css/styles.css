@@ -593,20 +593,23 @@ max-width: 100%;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1001; /* увеличено */
     background-color: #000000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    padding: 15px 3%;
+    gap: 30px;
 }
 
-/* --- Бегущая строка под навигацией --- */
 .marquee-container {
     position: fixed;
-    top: 70px; /* высота шапки навигации */
+    top: 60px; /* высота navbar */
     left: 0;
     width: 100%;
-    background-color: #C5A35A; /* золотой фон */
+    background-color: #C5A35A;
     overflow: hidden;
-    z-index: 999;
+    z-index: 1000; /* ниже navbar */
 }
 
 .marquee {
