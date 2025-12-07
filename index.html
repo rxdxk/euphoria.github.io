@@ -50,24 +50,23 @@
         <section id="featured-products">
             <h2>INITIAL SPARK Collection</h2>
             <div class="product-carousel swiper-container">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide product-card">
                         <img src="images/steel1.png" alt="Product 1">
                         <h3>White gold + diamonds Ring</h3>
                         <p>$750</p>
-                        <a href="#" class="view-details">View Details</a>
                     </div>
                     <div class="swiper-slide product-card">
                         <img src="images/blue-waves.png" alt="Product 2">
                         <h3>White gold + diamonds Necklace</h3>
                         <p>$850</p>
-                        <a href="#" class="view-details">View Details</a>
                     </div>
                     <div class="swiper-slide product-card">
                         <img src="images/steel2.jpg" alt="Product 3">
                         <h3>White gold + diamonds bracelet</h3>
                         <p>$990</p>
-                        <a href="#" class="view-details">View Details</a>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -96,16 +95,23 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/hero-slider.js"></script>
     <script>
-        // Initialize Swiper Carousel
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,       // ПК
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
             breakpoints: {
-                768: { slidesPerView: 2, spaceBetween: 20 },
-                480: { slidesPerView: 1, spaceBetween: 10 }
+                0: {               // телефоны
+                    slidesPerView: 1,
+                },
+                768: {             // планшеты
+                    slidesPerView: 2,
+                },
+                1024: {            // ПК
+                    slidesPerView: 3,
+                }
             }
         });
     </script>
