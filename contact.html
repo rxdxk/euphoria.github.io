@@ -50,13 +50,11 @@
                 <h2>Send Us a Message</h2>
 
                 <!-- Netlify Form -->
-                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                    <!-- REQUIRED hidden input -->
+                <form name="contact" method="POST" action="/success.html" data-netlify="true" data-netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contact">
 
-                    <!-- Honeypot -->
                     <p style="display:none;">
-                        <label>Don’t fill this out: <input name="bot-field" /></label>
+                        <label>Bot field: <input name="bot-field" /></label>
                     </p>
 
                     <div class="form-group">
@@ -78,9 +76,6 @@
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
-
-                    <!-- Optional Netlify reCAPTCHA -->
-                    <!-- <div data-netlify-recaptcha="true"></div> -->
 
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
