@@ -448,8 +448,10 @@ flex-direction: row-reverse;
 
 /* --- Контент --- */
 .content-wrapper {
-flex: 1 1 400px; /* растягивается, но минимальная ширина 400px */
-max-width: 600px;
+    flex: 1 1 400px; /* растягивается, но минимальная ширина 400px */
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* --- Изображения --- */
