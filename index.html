@@ -49,9 +49,8 @@
 
         <section id="featured-products">
             <h2>INITIAL SPARK Collection</h2>
-            <div class="product-carousel swiper-container">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+            <div class="product-carousel swiper-container mySwiper">
+                
                 <div class="swiper-wrapper">
                     <div class="swiper-slide product-card">
                         <img src="images/steel1.png" alt="Product 1">
@@ -65,13 +64,14 @@
                     </div>
                     <div class="swiper-slide product-card">
                         <img src="images/steel2.jpg" alt="Product 3">
-                        <h3>White gold + diamonds bracelet</h3>
+                        <h3>White gold + diamonds Bracelet</h3>
                         <p>$990</p>
                     </div>
                 </div>
+
                 <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
 
@@ -95,23 +95,21 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/hero-slider.js"></script>
     <script>
-        const swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,       // ПК
+            const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
             spaceBetween: 20,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
             breakpoints: {
-                0: {               // телефоны
-                    slidesPerView: 1,
-                },
-                768: {             // планшеты
-                    slidesPerView: 2,
-                },
-                1024: {            // ПК
-                    slidesPerView: 3,
-                }
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
             }
         });
     </script>
